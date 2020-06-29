@@ -33,8 +33,8 @@ _DESCRIPTION = """
 German Wikinews dataset
 """
 
-_URL = (
-    "https://drive.google.com/uc?export=download&id=1DGnbUY9zwiThTdgUvVTSAvSVHoloCgun"
+_PATH = (
+    "dataset/de-wiki-multi-news/"
 )
 
 _TITLE = "title"
@@ -69,8 +69,7 @@ class WikinewsSumDE(nlp.GeneratorBasedBuilder):
 
     def _split_generators(self, dl_manager):
         """Returns SplitGenerators."""
-        data_path = dl_manager.download_and_extract(_URL)
-
+        data_path = _PATH
         return [
             nlp.SplitGenerator(
                 name=nlp.Split.TRAIN,
