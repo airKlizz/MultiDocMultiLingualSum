@@ -26,7 +26,7 @@ import nlp
 
 
 _CITATION = """
-Anonymous
+Anonymous submission
 """
 
 _DESCRIPTION = """
@@ -62,7 +62,7 @@ class WikinewsSumEN(nlp.GeneratorBasedBuilder):
                 }
             ),
             # supervised_keys=(_TITLE, _DOCUMENT, _SUMMARY),
-            homepage="https://github.com/airKlizz/MultiDocMultiLingualSum",
+            homepage="",
             citation=_CITATION,
         )
         return info
