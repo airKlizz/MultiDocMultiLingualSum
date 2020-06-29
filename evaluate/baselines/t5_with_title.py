@@ -12,7 +12,16 @@ class T5WithTitle(Baseline):
     T5 model from HuggingFace with title in the input
     """
 
-    def __init__(self, name, model_name, input_max_length, device, batch_size, summarize_prefix, title_prefix):
+    def __init__(
+        self,
+        name,
+        model_name,
+        input_max_length,
+        device,
+        batch_size,
+        summarize_prefix,
+        title_prefix,
+    ):
         super().__init__(name)
         if isinstance(model_name, str):
             model_name = [model_name, model_name]

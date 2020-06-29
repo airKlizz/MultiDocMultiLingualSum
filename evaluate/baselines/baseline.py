@@ -8,7 +8,6 @@ import pyarrow as pa
 
 
 class Baseline(object):
-
     def __init__(self, name):
         """ 
         A Baseline is the base class for all baselines.
@@ -36,7 +35,7 @@ class Baseline(object):
         non_redundant=False,
         rouge_type="rouge2",
         rouge_method="recall",
-        redundance_threshold = 0.05,
+        redundance_threshold=0.05,
         ordering=False,
         **kwargs,
     ):
@@ -87,17 +86,19 @@ class Baseline(object):
                 sorted_ix = sorted_ix_non_redundant
 
             if ordering:
-                summary_sentences = [sentences[j] for j in sorted_ix[:example["num_sentences"]]]
+                summary_sentences = [
+                    sentences[j] for j in sorted_ix[: example["num_sentences"]]
+                ]
                 hyp = ""
                 for sentence in sentences:
                     if sentence in summary_sentences:
                         hyp += sentence + " "
-            
+
             else:
                 hyp = " ".join(
-                    [sentences[j] for j in sorted_ix[:example["num_sentences"]]]
+                    [sentences[j] for j in sorted_ix[: example["num_sentences"]]]
                 )
-            
+
             example[f"{self.name}_hypothesis"] = hyp
             return example
 

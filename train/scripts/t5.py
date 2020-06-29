@@ -73,7 +73,7 @@ class T5SummarizationTrainer(SummarizationTrainer):
         self.summarize_prefixes = {
             "en": "summarize",
             "de": "zusammenfassen",
-            "fr": "résume"
+            "fr": "résume",
         }
 
     def format_text(self, example):

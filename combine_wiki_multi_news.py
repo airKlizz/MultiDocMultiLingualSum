@@ -113,22 +113,23 @@ class CombineWikiMultiNews(nlp.GeneratorBasedBuilder):
         """Yields examples."""
         random.seed(seed)
         examples = []
-        for version, path in zip(['en', 'de', 'fr'], [en_path, de_path, fr_path]):
+        for version, path in zip(["en", "de", "fr"], [en_path, de_path, fr_path]):
             with open(path) as f:
                 for i, line in enumerate(f):
                     elem = json.loads(line)
-                    examples.append({
-                        _VERSION: version,
-                        _TITLE: elem["title"],
-                        _DOCUMENT: elem["sources"],
-                        _SUMMARY: elem["summary"],
-                        _CLEAN_DOCUMENT: self.clean_document(elem["sources"]),
-                        _CLEAN_SUMMARY: self.clean_summary(elem["summary"]),
-                    })
+                    examples.append(
+                        {
+                            _VERSION: version,
+                            _TITLE: elem["title"],
+                            _DOCUMENT: elem["sources"],
+                            _SUMMARY: elem["summary"],
+                            _CLEAN_DOCUMENT: self.clean_document(elem["sources"]),
+                            _CLEAN_SUMMARY: self.clean_summary(elem["summary"]),
+                        }
+                    )
         random.shuffle(examples)
         for i, example in enumerate(examples):
             yield i, example
-        
 
     def clean_summary(self, summary):
         summary = summary.replace("\t", " ")

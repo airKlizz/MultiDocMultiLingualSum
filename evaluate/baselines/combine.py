@@ -29,7 +29,7 @@ class Combine(Baseline):
         self, dataset, document_column_name, extractive_args, abstractive_args
     ):
         # Extractive step
-        print(f'Run extractive {self.extractive.name}')
+        print(f"Run extractive {self.extractive.name}")
         dataset = self.extractive.rank_sentences(
             dataset, document_column_name, **extractive_args
         )
@@ -50,7 +50,7 @@ class Combine(Baseline):
         dataset = dataset.map(truncate_and_order_example)
 
         # Abstractive step
-        print(f'Run abstractive {self.abstractive.name}')
+        print(f"Run abstractive {self.abstractive.name}")
         self.abstractive.name = self.name
         dataset = self.abstractive.get_summaries(
             dataset, "abstractive_input", **abstractive_args
@@ -63,7 +63,9 @@ class Combine(Baseline):
     ):
         truncated_sentences = []
         i = 0
-        while self._num_words(" ".join(truncated_sentences)) < input_max_length and i < len(ranked_sentences):
+        while self._num_words(
+            " ".join(truncated_sentences)
+        ) < input_max_length and i < len(ranked_sentences):
             truncated_sentences.append(ranked_sentences[i])
             i += 1
 

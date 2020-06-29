@@ -101,7 +101,7 @@ def create_dataset(
             remove_by_num_sources += 1
             continue
         if doc["score"]["rouge1"].recall < recall_threashold:
-            remove_by_rouge_threahold += 1 
+            remove_by_rouge_threahold += 1
             continue
         if not is_clean(summary, "|||".join(sources), len(doc["sources"]), hard=hard):
             remove_by_clean_conditions += 1
@@ -127,7 +127,6 @@ def create_dataset(
             remove_by_num_sources,
             remove_by_rouge_threahold,
             remove_by_clean_conditions,
-
         )
     )
 
@@ -215,8 +214,8 @@ def get_ids(wikinews_index_path, num=-1):
 
 def stats(dataset_script_path, dataset_cache_path, do_rouge):
     def words_counter(text):
-        text = text.translate(str.maketrans(punctuation, ' '*len(punctuation)))
-        return len(text.split(' '))
+        text = text.translate(str.maketrans(punctuation, " " * len(punctuation)))
+        return len(text.split(" "))
 
     def sentences_counter(text):
         return len(sent_tokenize(text))
@@ -253,9 +252,7 @@ def stats(dataset_script_path, dataset_cache_path, do_rouge):
     dataset = dataset.map(compute_stats)
 
     if do_rouge:
-        rouge_stats = rouge_metric.compute(
-            rouge_types=["rouge1", "rouge2", "rougeL"]
-        )
+        rouge_stats = rouge_metric.compute(rouge_types=["rouge1", "rouge2", "rougeL"])
 
     # Print number of examples
     print(f"The dataset contains {len(dataset)} examples.")

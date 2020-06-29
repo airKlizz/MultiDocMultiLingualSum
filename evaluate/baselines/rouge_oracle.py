@@ -36,7 +36,7 @@ class RougeOracle(Baseline):
         def run_rouge_oracle(example):
             sentences = sent_tokenize(example[document_column_name])
             reference = example[run_summary_colunm_name]
-            scores = [self._calculate_rouge(sent,reference) for sent in sentences]
+            scores = [self._calculate_rouge(sent, reference) for sent in sentences]
 
             example[self.name] = {
                 "sentences": sentences,

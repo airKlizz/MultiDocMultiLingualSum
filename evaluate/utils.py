@@ -16,6 +16,7 @@ def write_references(dataset, hypotheses_folder, summary_colunm_name):
         for ref in dataset[summary_colunm_name]:
             f.write("{}\n\n".format(ref.replace("\n", "")))
 
+
 def write_documents(dataset, hypotheses_folder, document_colunm_name):
     with open(join(hypotheses_folder, "documents.txt"), "w") as f:
         for doc in dataset[document_colunm_name]:

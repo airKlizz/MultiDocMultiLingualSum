@@ -1,7 +1,7 @@
 import numpy as np
 from tqdm import tqdm
 from nltk.tokenize import sent_tokenize, word_tokenize
-from nltk.corpus import stopwords 
+from nltk.corpus import stopwords
 from math import log
 
 from baselines.baseline import Baseline
@@ -19,16 +19,16 @@ class TFIDF(Baseline):
 
     def __init__(self, name, language):
         super().__init__(name)
-        self.stop_words = set(stopwords.words(language)) 
+        self.stop_words = set(stopwords.words(language))
 
     def rank_sentences(
         self, dataset, document_column_name, title_column_name, **kwargs,
     ):
         all_sentences = []
         all_scores = []
-        for title, document in tqdm(zip(
-            dataset[title_column_name], dataset[document_column_name]
-        )):
+        for title, document in tqdm(
+            zip(dataset[title_column_name], dataset[document_column_name])
+        ):
             sentences, scores = self.run_single(title, document)
             all_sentences.append(sentences)
             all_scores.append(scores)
@@ -41,8 +41,8 @@ class TFIDF(Baseline):
 
     def run_single(self, title, document):
         sentences = sent_tokenize(document)
-        title_words = [w for w in word_tokenize(title) if not w in self.stop_words] 
-        
+        title_words = [w for w in word_tokenize(title) if not w in self.stop_words]
+
         scores = [0] * len(sentences)
         sentences_words = list(map(word_tokenize, sentences))
         n_d = len(sentences)
@@ -52,11 +52,11 @@ class TFIDF(Baseline):
                 continue
             for i, sentence_words in enumerate(sentences_words):
                 n_w = sentence_words.count(title_word)
-                scores[i] += n_w * log(n_d/n_dw)
+                scores[i] += n_w * log(n_d / n_dw)
 
         return sentences, scores
 
-    # Return the number of sentences containing the word    
+    # Return the number of sentences containing the word
     def _compute_n_dw(self, word, sentences_words):
         count = 0
         for sentence_words in sentences_words:

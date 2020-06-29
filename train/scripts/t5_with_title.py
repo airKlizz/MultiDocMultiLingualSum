@@ -77,13 +77,9 @@ class T5WithTitleSummarizationTrainer(SummarizationTrainer):
         self.summarize_prefixes = {
             "en": "summarize",
             "de": "zusammenfassen",
-            "fr": "résume"
+            "fr": "résume",
         }
-        self.title_prefixes = {
-            "en": "title",
-            "de": "titel",
-            "fr": "titre"
-        }
+        self.title_prefixes = {"en": "title", "de": "titel", "fr": "titre"}
 
     def format_text(self, example):
         # process the examples in input and target text format and the eos token at the end

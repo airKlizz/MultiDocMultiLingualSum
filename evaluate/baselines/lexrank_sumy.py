@@ -53,7 +53,9 @@ class LexRankSumy(Baseline):
         tf_metrics = self.summarizer._compute_tf(sentences_words)
         idf_metrics = self.summarizer._compute_idf(sentences_words)
 
-        matrix = self.summarizer._create_matrix(sentences_words, self.summarizer.threshold, tf_metrics, idf_metrics)
+        matrix = self.summarizer._create_matrix(
+            sentences_words, self.summarizer.threshold, tf_metrics, idf_metrics
+        )
         scores = self.summarizer.power_method(matrix, self.summarizer.epsilon)
 
         return list(map(str, document.sentences)), list(scores)
