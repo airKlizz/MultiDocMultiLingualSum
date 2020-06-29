@@ -1,12 +1,12 @@
-# Multi-Document Multi-Lingual Summarization
+# Generating Extended and Multilingual Summaries with Pre-trained Transformers
 
-Code to reproduce data, models and results of the paper **Multi-Language Multi-Document Summarization**.
+Code to reproduce data, models and results of the paper **Generating Extended and Multilingual Summaries with Pre-trained Transformers**.
 
-## Multi-Wiki-News
+## WikinewsSum
 
 ### Reproduce the dataset
 
-All the code to create Multi-Wiki-News and reproduce stats and explaination are in the [``dataset``](/dataset) folder.
+All the code to create WikinewsSum and reproduce stats and explaination are in the [``dataset``](/dataset) folder.
 
 ### Load the dataset
 
@@ -14,7 +14,7 @@ Raw data of each version of the dataset are available [here](https://drive.googl
 
 You can also load the dataset with the [HuggingFace nlp library](https://github.com/huggingface/nlp) using ``en_wiki_multi_news.py`` for the English version, ``de_wiki_multi_news.py`` for the German version or ``fr_wiki_multi_news.py`` for the French one.
 
-For load the Multi-en-Wiki-News, run:
+For load the WikinewsSum-EN, run:
 
 ```python
 from nlp import load_dataset
@@ -32,7 +32,7 @@ Training models are available as HugginFace models [here](https://huggingface.co
 
 Implementation code and training scripts are in the [``train``](/train) folder.
 
-For example, you can use BART fine-tuned on Multi-en-Wiki-News as follow:
+For example, you can use BART fine-tuned on WikinewsSum-EN as follow:
 
 ```python
 from transformers import AutoTokenizer, AutoModelWithLMHead
