@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # Lint as: python3
-"""Fr Wiki Multi News dataset."""
+"""WikinewsSum-FR dataset."""
 
 from __future__ import absolute_import, division, print_function
 
@@ -26,7 +26,7 @@ import nlp
 
 
 _CITATION = """
-DFKI
+Anonymous submission
 """
 
 _DESCRIPTION = """
@@ -45,7 +45,7 @@ _CLEAN_SUMMARY = "clean_summary"
 
 
 class FrWikiMultiNews(nlp.GeneratorBasedBuilder):
-    """Multi-News dataset."""
+    """WikinewsSum-FR dataset."""
 
     VERSION = nlp.Version("1.0.0")
 
@@ -62,7 +62,7 @@ class FrWikiMultiNews(nlp.GeneratorBasedBuilder):
                 }
             ),
             # supervised_keys=(_TITLE, _DOCUMENT, _SUMMARY),
-            homepage="https://github.com/airKlizz/MultiDocMultiLingualSum",
+            homepage="",
             citation=_CITATION,
         )
         return info
