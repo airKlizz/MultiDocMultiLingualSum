@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # Lint as: python3
-"""De Wiki Multi News dataset."""
+"""WikinewsSum-DE dataset."""
 
 from __future__ import absolute_import, division, print_function
 
@@ -26,7 +26,7 @@ import nlp
 
 
 _CITATION = """
-DFKI
+Anonymous submission
 """
 
 _DESCRIPTION = """
@@ -44,8 +44,8 @@ _CLEAN_DOCUMENT = "clean_document"
 _CLEAN_SUMMARY = "clean_summary"
 
 
-class DeWikiMultiNews(nlp.GeneratorBasedBuilder):
-    """Multi-News dataset."""
+class WikinewsSumDE(nlp.GeneratorBasedBuilder):
+    """WikinewsSum-DE dataset."""
 
     VERSION = nlp.Version("1.0.0")
 
@@ -62,7 +62,7 @@ class DeWikiMultiNews(nlp.GeneratorBasedBuilder):
                 }
             ),
             # supervised_keys=(_TITLE, _DOCUMENT, _SUMMARY),
-            homepage="https://github.com/airKlizz/MultiDocMultiLingualSum",
+            homepage="",
             citation=_CITATION,
         )
         return info
