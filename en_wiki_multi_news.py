@@ -14,7 +14,7 @@
 # limitations under the License.
 
 # Lint as: python3
-"""En Wiki Multi News dataset."""
+"""WikinewsSum-EN dataset."""
 
 from __future__ import absolute_import, division, print_function
 
@@ -26,7 +26,7 @@ import nlp
 
 
 _CITATION = """
-DFKI
+Anonymous
 """
 
 _DESCRIPTION = """
@@ -44,8 +44,8 @@ _CLEAN_DOCUMENT = "clean_document"
 _CLEAN_SUMMARY = "clean_summary"
 
 
-class EnWikiMultiNews(nlp.GeneratorBasedBuilder):
-    """Multi-News dataset."""
+class WikinewsSumEN(nlp.GeneratorBasedBuilder):
+    """WikinewsSum-EN dataset."""
 
     VERSION = nlp.Version("1.0.0")
 
