@@ -100,7 +100,7 @@ The file is composed of 3 arguments:
 
 See ``args/`` to see more examples.
 
-## Results for ``en-wiki-multi-news``
+## Results for ``WikinewsSum-EN``
 
 ### Extractives methods
 
@@ -152,7 +152,7 @@ Run ``python evaluate/run_baseline.py --run_args_file "evaluate/args/run_args_co
 | RougeOracle + Bart | 47.17% | 49.75% | 45.98% | 20.50% | 20.93% | 19.61% | 24.72% | 26.32% | 24.09% |
 | RougeOracle + T5 | 55.83% | 43.69% | 46.43% | 27.80% | 20.26% | 22.19% | 31.20% | 24.21% | 25.75% |
 
-## Results for ``de-wiki-multi-news``
+## Results for ``WikinewsSum-DE``
 
 ### Extractives methods
 
@@ -203,7 +203,7 @@ Run ``python evaluate/run_baseline.py --run_args_file "evaluate/args/run_args_co
 | RougeOracle + Bart | 44.99% | 28.71% | 32.59% | 14.57% | 9.05% | 10.35% | 22.90% | 14.86% | 16.71% |
 | RougeOracle + T5 | 46.52% | 31.59% | 34.89% | 17.09% | 10.94% | 12.36% | 23.88% | 16.37% | 17.95% |
 
-## Results for ``fr-wiki-multi-news``
+## Results for ``WikinewsSum-FR``
 
 ### Extractives methods
 
