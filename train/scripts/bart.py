@@ -9,7 +9,7 @@ import torch
 
 
 @dataclass
-class BartDataCollator(DataCollator):
+class BartDataCollator():
     def collate_batch(self, batch: List) -> Dict[str, torch.Tensor]:
         """
         Take a list of samples from a Dataset and collate them into a batch.
