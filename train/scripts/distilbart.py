@@ -82,10 +82,10 @@ class DistilbartSummarizationTrainer(SummarizationTrainer):
         self._copy_to_student(d_layers_to_copy, e_layers_to_copy, student_encoder_layers, student_decoder_layers, student, teacher)
         self.model = student
         print(student)
-        inputs = tokenizer.encode_plus("TEXT TO SUMMARIZE", max_length=1024, return_tensors="pt")
+        inputs = self.tokenizer.encode_plus("TEXT TO SUMMARIZE", max_length=1024, return_tensors="pt")
 
         # Summarize
-        outputs = model.generate(
+        outputs = self.model.generate(
             input_ids=inputs['input_ids'], 
             attention_mask=inputs['attention_mask'], 
             max_length=400, 
@@ -96,7 +96,7 @@ class DistilbartSummarizationTrainer(SummarizationTrainer):
         )
 
         # Decode
-        summary = tokenizer.decode(outputs[0], skip_special_tokens=True, clean_up_tokenization_spaces=False)
+        summary = self.tokenizer.decode(outputs[0], skip_special_tokens=True, clean_up_tokenization_spaces=False)
         print(summary)
     
     def _init_student(self, student, teacher):
