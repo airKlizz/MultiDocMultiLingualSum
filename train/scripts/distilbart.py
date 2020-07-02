@@ -3,7 +3,7 @@ from scripts.summarization_trainer import SummarizationTrainer
 from dataclasses import dataclass
 from typing import Dict, List
 from transformers import DataCollator
-from transformers import BartForConditionalGeneration, BartTokenizer
+from transformers import BartForConditionalGeneration, BartTokenizer, BartConfig
 
 import torch
 from torch import nn
