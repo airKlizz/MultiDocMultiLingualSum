@@ -50,6 +50,12 @@ class ClassArguments:
     version_column: Optional[str] = field(
         default=None, metadata={"help": "Name of the version column"}
     )
+    student_encoder_layers: Optional[int] = field(
+        default=12, metadata={"help": "Number of encoder layer for Distilbart"}
+    )
+    student_decoder_layers: Optional[int] = field(
+        default=6, metadata={"help": "Number of decoder layer for Distilbart"}
+    )
 
 
 @dataclass

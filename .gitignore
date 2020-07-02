@@ -9,6 +9,7 @@ dataset/sources/__pycache__/*
 # csv
 *.csv
 
+.vscode/*
 
 dataset_tree.txt
 
