@@ -11,7 +11,7 @@ import torch
 # this is necessacry because the trainer directly passes this dict as arguments to the model
 # so make sure the keys match the parameter names of the forward method
 @dataclass
-class T5DataCollator(DataCollator):
+class T5DataCollator(object):
     def collate_batch(self, batch: List) -> Dict[str, torch.Tensor]:
         """
         Take a list of samples from a Dataset and collate them into a batch.
