@@ -144,7 +144,7 @@ class SummarizationTrainer(object):
         train_dataset = torch.load(data_args.train_file_path)
         valid_dataset = torch.load(data_args.valid_file_path)
         logger.info("Dataset ready")
-
+        print(type(cls.data_collator.collate_batch))
         # Initialize our Trainer
         trainer = Trainer(
             model=summarization_trainer.model,
