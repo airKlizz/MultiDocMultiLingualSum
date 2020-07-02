@@ -15,6 +15,7 @@
     "save_total_limit": 3,
   
     "model_name_or_path": "airKlizz/bart-large-multi-combine-wiki-news",
+    "tokenizer_name": "facebook/bart-large",
     "input_max_length": 1024,
     "target_max_length": 307,
     "summary_column_name": "clean_summary",
