@@ -151,7 +151,7 @@ class SummarizationTrainer(object):
             args=training_args,
             train_dataset=train_dataset,
             eval_dataset=valid_dataset,
-            data_collator=cls.data_collator,
+            data_collator=cls.data_collator.collate_batch,
             prediction_loss_only=True,
         )
 
