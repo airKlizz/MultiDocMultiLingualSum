@@ -1,0 +1,33 @@
+{
+    "output_dir": "train/combine-models/t5-small-fine-tuned",
+    "do_train": true,
+    "do_eval": true,
+    "evaluate_during_training": true,
+  
+    "per_gpu_train_batch_size": 4,
+    "per_gpu_eval_batch_size": 4,
+    "gradient_accumulation_steps": 8,
+  
+    "logging_steps": 100,
+    "learning_rate": 1e-4,
+    "num_train_epochs": 8,
+    "save_steps": 250,
+    "save_total_limit": 3,
+  
+    "model_name_or_path": "t5-small",
+    "input_max_length": 512,
+    "target_max_length": 307,
+    "summary_column_name": "clean_summary",
+    "document_column_name": "clean_document",
+    "summarize_prefix": null,
+    "wandb_project": "Multi-combine-Wiki-News",
+    "wandb_run_name": "t5-small",
+
+  
+    "train_file_path": "valid.pt",
+    "valid_file_path": "train.pt",
+    "max_len": 512,
+    "target_max_len": 307,
+
+    "path": "./combine_wiki_multi_news.py"
+  }
