@@ -134,6 +134,7 @@ Run ``python evaluate/run_baseline.py --run_args_file "evaluate/args/run_args_co
 | Lead + Bart | 44.46% | 47.42% | 43.59% | 17.04% | 17.86% | 16.54% | 22.55% | 24.48% | 22.24% |
 | Lead + T5 | 48.41% | 39.33% | 41.04% | 18.72% | 14.82% | 15.67% | 26.02% | 21.30% | 22.11% |
 | Lead + Distilbart | 44.61% | 47.22% | 43.50% | 17.41% | 18.15% | 16.83% | 22.73% | 24.50% | 22.31% |
+| Lead + smallT5 | 47.29% | 38.70% | 40.12% | 17.88% | 14.28% | 14.93% | 24.63% | 20.27% | 20.88% |
 
 ### Abstractives methods combined with Oracle
 
