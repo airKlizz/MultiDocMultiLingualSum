@@ -4,7 +4,6 @@ import dataclasses
 import logging
 import os
 import sys
-import wandb
 
 import numpy as np
 import torch
@@ -18,8 +17,15 @@ from transformers import (
     set_seed,
 )
 
+try:
+    import wandb
+except:
+    pass
+
 logger = logging.getLogger(__name__)
 
+def use_wandb():
+    return "wandb" in sys.modules
 
 class SummarizationTrainer(object):
     def __init__(
@@ -37,7 +43,8 @@ class SummarizationTrainer(object):
         self.summary_column_name = summary_column_name
         self.document_column_name = document_column_name
 
-        wandb.init(name=wandb_run_name, project=wandb_project, reinit=True)
+        if use_wandb():
+            wandb.init(name=wandb_run_name, project=wandb_project, reinit=True)
 
     def cache_dataset(self, train_file_path, valid_file_path):
         torch.save(self.train_dataset, os.path.abspath(train_file_path))
