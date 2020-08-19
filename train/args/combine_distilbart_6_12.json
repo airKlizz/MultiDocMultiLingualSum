@@ -1,5 +1,5 @@
 {
-    "output_dir": "train/combine-models/bart-large-fine-tuned",
+    "output_dir": "train/combine-models/distilbart-6-12-large-fine-tuned",
     "do_train": true,
     "do_eval": true,
     "evaluate_during_training": true,
@@ -22,8 +22,8 @@
     "document_column_name": "clean_document",
     "wandb_project": "Multi-combine-Wiki-News",
     "wandb_run_name": "distilbart",
-    "student_encoder_layers": 12,
-    "student_decoder_layers": 9,
+    "student_encoder_layers": 6,
+    "student_decoder_layers": 12,
 
   
     "train_file_path": "valid.pt",
