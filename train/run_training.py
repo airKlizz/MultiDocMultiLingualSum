@@ -5,15 +5,18 @@ from scripts.bert2bert import Bert2BertSummarizationTrainer
 from scripts.distilbart import DistilbartSummarizationTrainer
 
 
-import wandb
+try:
+    import wandb
+except:
+    pass
 
 import argparse
 
+def use_wandb():
+    return "wandb" in sys.modules
+
 parser = argparse.ArgumentParser()
-parser.add_argument("--en", action="store_true")
-parser.add_argument("--fr", action="store_true")
-parser.add_argument("--de", action="store_true")
-parser.add_argument("--combine", action="store_true")
+
 parser.add_argument("--bert2bert", action="store_true")
 parser.add_argument("--distilbart", action="store_true")
 parser.add_argument("--bart", action="store_true")
@@ -22,30 +25,26 @@ parser.add_argument("--smallt5", action="store_true")
 parser.add_argument("--t5", action="store_true")
 parser.add_argument("--t5_with_title", action="store_true")
 
+parser.add_argument("--args_file", help="Path to the args json file", type=str)
+
 args = parser.parse_args()
 
-lang = None
-if args.en:
-    lang = "en"
-elif args.fr:
-    lang = "fr"
-elif args.de:
-    lang = "de"
-elif args.combine:
-    lang = "combine"
 
-wandb.login()
+if use_wandb():
+    wandb.login()
+
+
 if args.bert2bert:
-    Bert2BertSummarizationTrainer.train(f"train/args/{lang}_bert2bert.json")
+    Bert2BertSummarizationTrainer.train(args.args_file)
 if args.distilbart:
-    DistilbartSummarizationTrainer.train(f"train/args/{lang}_distilbart.json")
+    DistilbartSummarizationTrainer.train(args.args_file)
 if args.bart_cnn:
-    BartSummarizationTrainer.train(f"train/args/{lang}_bart_cnn.json")
+    BartSummarizationTrainer.train(args.args_file)
 if args.bart:
-    BartSummarizationTrainer.train(f"train/args/{lang}_bart.json")
+    BartSummarizationTrainer.train(args.args_file)
 if args.smallt5:
-    T5SummarizationTrainer.train(f"train/args/{lang}_smallt5.json")
+    T5SummarizationTrainer.train(args.args_file)
 if args.t5:
-    T5SummarizationTrainer.train(f"train/args/{lang}_t5.json")
+    T5SummarizationTrainer.train(args.args_file)
 if args.t5_with_title:
-    T5WithTitleSummarizationTrainer.train(f"train/args/{lang}_t5_with_title.json")
+    T5WithTitleSummarizationTrainer.train(args.args_file)
