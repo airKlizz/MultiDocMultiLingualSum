@@ -85,12 +85,14 @@ class SummarizationTrainer(object):
         # tokenize the examples
         input_encodings = self.tokenizer(
             example_batch["input_text"],
-            truncation="max_length",
+            padding="max_length",
+            truncation=True,
             max_length=self.input_max_length,
         )
         target_encodings = self.tokenizer(
             example_batch["target_text"],
-            truncation="max_length",
+            padding="max_length",
+            truncation=True,
             max_length=self.target_max_length,
         )
 
