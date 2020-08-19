@@ -83,14 +83,14 @@ class SummarizationTrainer(object):
 
     def convert_to_features(self, example_batch):
         # tokenize the examples
-        input_encodings = self.tokenizer.batch_encode_plus(
+        input_encodings = self.tokenizer(
             example_batch["input_text"],
-            pad_to_max_length=True,
+            truncation=True,
             max_length=self.input_max_length,
         )
-        target_encodings = self.tokenizer.batch_encode_plus(
+        target_encodings = self.tokenizer(
             example_batch["target_text"],
-            pad_to_max_length=True,
+            truncation=True,
             max_length=self.target_max_length,
         )
 
