@@ -686,7 +686,7 @@
 
     "dataset": {
         "name": "en_wiki_multi_news.py",
-        "split": "test[:10]",
+        "split": "test[:4]",
         "cache_dir": "dataset/.en-wiki-multi-news-cache",
         "document_column_name": "clean_document",
         "summary_colunm_name": "clean_summary"

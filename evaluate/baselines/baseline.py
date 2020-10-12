@@ -140,7 +140,11 @@ class Baseline(object):
         return dataset, rouge_metric.compute(rouge_types=rouge_types)
         """
 
-        return rouge_metric.compute(predictions=dataset[f"{self.name}_hypothesis"], references=dataset[summary_colunm_name])
+        return dataset, rouge_metric.compute(
+            predictions=dataset[f"{self.name}_hypothesis"], 
+            references=dataset[summary_colunm_name]
+            rouge_types=rouge_types
+        )
 
     def _init_rouge(self, rouge_type, rouge_method):
         self.rouge_metric = load_metric("rouge")
