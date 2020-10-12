@@ -1,5 +1,5 @@
 # coding=utf-8
-# Copyright 2020 The TensorFlow Datasets Authors and the HuggingFace NLP Authors.
+# Copyright 2020 The TensorFlow Datasets Authors and the HuggingFace datasets Authors.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import os
 
 import json
 
-import nlp
+import datasets
 
 
 _CITATION = """
@@ -48,21 +48,21 @@ _CLEAN_DOCUMENT = "clean_document"
 _CLEAN_SUMMARY = "clean_summary"
 
 
-class WikinewsSumEN(nlp.GeneratorBasedBuilder):
+class WikinewsSumEN(datasets.GeneratorBasedBuilder):
     """WikinewsSum-EN dataset."""
 
-    VERSION = nlp.Version("1.0.0")
+    VERSION = datasets.Version("1.0.0")
 
     def _info(self):
-        info = nlp.DatasetInfo(
+        info = datasets.DatasetInfo(
             description=_DESCRIPTION,
-            features=nlp.Features(
+            features=datasets.Features(
                 {
-                    _TITLE: nlp.Value("string"),
-                    _DOCUMENT: nlp.Value("string"),
-                    _SUMMARY: nlp.Value("string"),
-                    _CLEAN_DOCUMENT: nlp.Value("string"),
-                    _CLEAN_SUMMARY: nlp.Value("string"),
+                    _TITLE: datasets.Value("string"),
+                    _DOCUMENT: datasets.Value("string"),
+                    _SUMMARY: datasets.Value("string"),
+                    _CLEAN_DOCUMENT: datasets.Value("string"),
+                    _CLEAN_SUMMARY: datasets.Value("string"),
                 }
             ),
             # supervised_keys=(_TITLE, _DOCUMENT, _SUMMARY),
@@ -76,16 +76,16 @@ class WikinewsSumEN(nlp.GeneratorBasedBuilder):
         #data_path = _PATH
         data_path = dl_manager.download_and_extract(URL)
         return [
-            nlp.SplitGenerator(
-                name=nlp.Split.TRAIN,
+            datasets.SplitGenerator(
+                name=datasets.Split.TRAIN,
                 gen_kwargs={"path": os.path.join(data_path, "train.jsonl")},
             ),
-            nlp.SplitGenerator(
-                name=nlp.Split.VALIDATION,
+            datasets.SplitGenerator(
+                name=datasets.Split.VALIDATION,
                 gen_kwargs={"path": os.path.join(data_path, "validation.jsonl")},
             ),
-            nlp.SplitGenerator(
-                name=nlp.Split.TEST,
+            datasets.SplitGenerator(
+                name=datasets.Split.TEST,
                 gen_kwargs={"path": os.path.join(data_path, "test.jsonl")},
             ),
         ]

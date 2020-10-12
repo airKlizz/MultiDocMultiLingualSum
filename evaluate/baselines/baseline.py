@@ -3,7 +3,7 @@
 import os
 import numpy as np
 from nltk.tokenize import sent_tokenize, word_tokenize
-from nlp import load_metric
+from datasets import load_metric
 import pyarrow as pa
 
 
@@ -19,10 +19,10 @@ class Baseline(object):
         """
         Run the extractive baseline for all documents by associating a score to each sentences.
         Args:
-            dataset (nlp.Dataset): dataset containing document to summarize
+            dataset (datasets.Dataset): dataset containing document to summarize
             document_column_name (str): name of the column of the dataset containing documents
         Return:
-            dataset (nlp.Dataset): dataset with a new column containing sentences and scores.
+            dataset (datasets.Dataset): dataset with a new column containing sentences and scores.
         """
 
         raise NotImplementedError()
@@ -42,7 +42,7 @@ class Baseline(object):
         """
         Get the summary of each documents.
         Args:
-            dataset (nlp.Dataset): dataset containing document to summarize
+            dataset (datasets.Dataset): dataset containing document to summarize
             document_column_name (str): name of the column of the dataset containing documents
             num_sentences (int or list): number of sentences in the summaries or list of number of sentences in the summaries
             non_redundant (bool): apply non redundant 
@@ -52,7 +52,7 @@ class Baseline(object):
             ordering (bool): apply ordering
             **kwargs: arguments to pass to the run function
         Return:
-            dataset (nlp.Dataset): dataset with a new column for hypothesis
+            dataset (datasets.Dataset): dataset with a new column for hypothesis
         """
         dataset = self.rank_sentences(dataset, document_column_name, **kwargs)
 
@@ -117,13 +117,13 @@ class Baseline(object):
         """
         Generate hypotheses and compute ROUGE score between summaries and hypotheses
         Args:
-            dataset (nlp.Dataset): dataset containing document to summarize
+            dataset (datasets.Dataset): dataset containing document to summarize
             document_column_name (str): name of the column of the dataset containing documents
             summary_colunm_name (str): name of the column of the dataset containing summaries
             rouge_types (lst(str)): list of ROUGE types you want to compute
             **kwargs: arguments to pass to the run function
         Return:
-            score (dict(Score)): dict of ROUGE types with the score (see nlp metrics for details)
+            score (dict(Score)): dict of ROUGE types with the score (see datasets metrics for details)
         """
 
         dataset = self.get_summaries(dataset, document_column_name, **kwargs)
