@@ -130,6 +130,7 @@ class Baseline(object):
 
         rouge_metric = load_metric("rouge")
 
+        """
         def compute_rouge_batch(example):
             predictions = example[f"{self.name}_hypothesis"]
             references = example[summary_colunm_name]
@@ -137,6 +138,9 @@ class Baseline(object):
 
         dataset.map(compute_rouge_batch, batched=True)
         return dataset, rouge_metric.compute(rouge_types=rouge_types)
+        """
+
+        return rouge_metric.compute(predictions=dataset[f"{self.name}_hypothesis"], references=dataset[summary_colunm_name])
 
     def _init_rouge(self, rouge_type, rouge_method):
         self.rouge_metric = load_metric("rouge")
