@@ -14,7 +14,7 @@
                     "model_name": ["bert-base-cased", "airKlizz/bert2bert-multi-en-wiki-news"],
                     "input_max_length": 512,
                     "device": "cuda",
-                    "batch_size": 8
+                    "batch_size": 4
                 }
             }, 
             "run_kwargs": {
@@ -45,7 +45,7 @@
                     "model_name": "airKlizz/bart-large-multi-en-wiki-news",
                     "input_max_length": 1024,
                     "device": "cuda",
-                    "batch_size": 8
+                    "batch_size": 4
                 }
             }, 
             "run_kwargs": {
@@ -76,7 +76,7 @@
                     "model_name": "airKlizz/bart-large-cnn-multi-en-wiki-news",
                     "input_max_length": 1024,
                     "device": "cuda",
-                    "batch_size": 8
+                    "batch_size": 4
                 }
             }, 
             "run_kwargs": {
@@ -107,7 +107,7 @@
                     "model_name": "airKlizz/t5-base-multi-en-wiki-news",
                     "input_max_length": 512,
                     "device": "cuda",
-                    "batch_size": 8,
+                    "batch_size": 4,
                     "summarize_prefix": "summarize"
                 }
             }, 
@@ -139,7 +139,7 @@
                     "model_name": "airKlizz/t5-base-with-title-multi-en-wiki-news",
                     "input_max_length": 512,
                     "device": "cuda",
-                    "batch_size": 8,
+                    "batch_size": 4,
                     "summarize_prefix": "summarize",
                     "title_prefix": "title"
                 }
@@ -175,7 +175,7 @@
                     "model_name": ["bert-base-cased", "airKlizz/bert2bert-multi-en-wiki-news"],
                     "input_max_length": 512,
                     "device": "cuda",
-                    "batch_size": 8
+                    "batch_size": 4
                 }
             }, 
             "run_kwargs": {
@@ -208,7 +208,7 @@
                     "model_name": "airKlizz/bart-large-multi-en-wiki-news",
                     "input_max_length": 1024,
                     "device": "cuda",
-                    "batch_size": 8
+                    "batch_size": 4
                 }
             }, 
             "run_kwargs": {
@@ -241,7 +241,7 @@
                     "model_name": "airKlizz/bart-large-cnn-multi-en-wiki-news",
                     "input_max_length": 1024,
                     "device": "cuda",
-                    "batch_size": 8
+                    "batch_size": 4
                 }
             }, 
             "run_kwargs": {
@@ -274,7 +274,7 @@
                     "model_name": "airKlizz/t5-base-multi-en-wiki-news",
                     "input_max_length": 512,
                     "device": "cuda",
-                    "batch_size": 8,
+                    "batch_size": 4,
                     "summarize_prefix": "summarize"
                 }
             }, 
@@ -308,7 +308,7 @@
                     "model_name": "airKlizz/t5-base-with-title-multi-en-wiki-news",
                     "input_max_length": 512,
                     "device": "cuda",
-                    "batch_size": 8,
+                    "batch_size": 4,
                     "summarize_prefix": "summarize",
                     "title_prefix": "title"
                 }
@@ -346,7 +346,7 @@
                     "model_name": ["bert-base-cased", "airKlizz/bert2bert-multi-en-wiki-news"],
                     "input_max_length": 512,
                     "device": "cuda",
-                    "batch_size": 8
+                    "batch_size": 4
                 }
             }, 
             "run_kwargs": {
@@ -379,7 +379,7 @@
                     "model_name": "airKlizz/bart-large-multi-en-wiki-news",
                     "input_max_length": 1024,
                     "device": "cuda",
-                    "batch_size": 8
+                    "batch_size": 4
                 }
             }, 
             "run_kwargs": {
@@ -412,7 +412,7 @@
                     "model_name": "airKlizz/bart-large-cnn-multi-en-wiki-news",
                     "input_max_length": 1024,
                     "device": "cuda",
-                    "batch_size": 8
+                    "batch_size": 4
                 }
             }, 
             "run_kwargs": {
@@ -445,7 +445,7 @@
                     "model_name": "airKlizz/t5-base-multi-en-wiki-news",
                     "input_max_length": 512,
                     "device": "cuda",
-                    "batch_size": 8,
+                    "batch_size": 4,
                     "summarize_prefix": "summarize"
                 }
             }, 
@@ -479,7 +479,7 @@
                     "model_name": "airKlizz/t5-base-with-title-multi-en-wiki-news",
                     "input_max_length": 512,
                     "device": "cuda",
-                    "batch_size": 8,
+                    "batch_size": 4,
                     "summarize_prefix": "summarize",
                     "title_prefix": "title"
                 }
@@ -518,7 +518,7 @@
                     "model_name": ["bert-base-cased", "airKlizz/bert2bert-multi-en-wiki-news"],
                     "input_max_length": 512,
                     "device": "cuda",
-                    "batch_size": 8
+                    "batch_size": 4
                 }
             }, 
             "run_kwargs": {
@@ -553,7 +553,7 @@
                     "model_name": "airKlizz/bart-large-multi-en-wiki-news",
                     "input_max_length": 1024,
                     "device": "cuda",
-                    "batch_size": 8
+                    "batch_size": 4
                 }
             }, 
             "run_kwargs": {
@@ -588,7 +588,7 @@
                     "model_name": "airKlizz/bart-large-cnn-multi-en-wiki-news",
                     "input_max_length": 1024,
                     "device": "cuda",
-                    "batch_size": 8
+                    "batch_size": 4
                 }
             }, 
             "run_kwargs": {
@@ -623,7 +623,7 @@
                     "model_name": "airKlizz/t5-base-multi-en-wiki-news",
                     "input_max_length": 512,
                     "device": "cuda",
-                    "batch_size": 8,
+                    "batch_size": 4,
                     "summarize_prefix": "summarize"
                 }
             }, 
@@ -659,7 +659,7 @@
                     "model_name": "airKlizz/t5-base-with-title-multi-en-wiki-news",
                     "input_max_length": 512,
                     "device": "cuda",
-                    "batch_size": 8,
+                    "batch_size": 4,
                     "summarize_prefix": "summarize",
                     "title_prefix": "title"
                 }
@@ -686,7 +686,7 @@
 
     "dataset": {
         "name": "en_wiki_multi_news.py",
-        "split": "test",
+        "split": "test[:10]",
         "cache_dir": "dataset/.en-wiki-multi-news-cache",
         "document_column_name": "clean_document",
         "summary_colunm_name": "clean_summary"
